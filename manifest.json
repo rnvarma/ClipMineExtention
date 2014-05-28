@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "ClipMine",
+  "description": "This extension is to interact with ClipMine through Chrome",
+
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+
+  "background": {
+  	"scripts": ["js/background.js"],
+  	"persistent": true
+  },
+
+  "content_scripts": [{
+    "matches": ["<all_urls>"], 
+    "all_frames": true,
+    "js": ["js/contentscript.js"]
+  }],
+
+  "version": "1.0",
+
+  "browser_action":{
+    "default_icon": "images/favicon.png",
+    "default_popup": "popup.html"
+  }
+} 
